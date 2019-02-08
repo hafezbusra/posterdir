@@ -1,0 +1,47 @@
+<%= form_with(model: fyp_poster, local: true) do |form| %>
+  <% if fyp_poster.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fyp_poster.errors.count, "error") %> prohibited this fyp_poster from being saved:</h2>
+
+      <ul>
+      <% fyp_poster.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :p_id %>
+    <%= form.text_field :p_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p_title %>
+    <%= form.text_field :p_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :student_name %>
+    <%= form.text_field :student_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :student_id %>
+    <%= form.text_field :student_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :supervisor_name %>
+    <%= form.text_field :supervisor_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :moderator_name %>
+    <%= form.text_field :moderator_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+module FypPostersHelper
+end

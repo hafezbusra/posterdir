@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  keywords: MyString
+  p_id: MyString
+  student_name: MyString
+  student_id: MyString
+  supervisor_name: MyString
+  moderator_name: MyString
+
+two:
+  keywords: MyString
+  p_id: MyString
+  student_name: MyString
+  student_id: MyString
+  supervisor_name: MyString
+  moderator_name: MyString

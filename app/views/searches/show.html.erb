@@ -1,0 +1,75 @@
+
+<div class="ruby-demo">
+  <div class="site-background"></div>
+  <div class="search-demo -live-filtering">
+  <div class="search-demo <%= 'active-search' if  @search.search_posters.present? %> -live-filtering">
+    <div class="search-demo__content">
+
+      <%# Header %>
+      <div class="search-demo__header">
+        <div class="search-demo__headings">
+          <div class="search-demo__icon-wrap">
+            <%= image_tag('icons/mmu.png', class: 'search-demo__icon', alt: 'Gem Search Icon', style: 'height:100px;width:300px;margin-bottom:20px') %>
+          </div>
+          <h1 class="search-demo__title">FYP Poster</h1>
+          <h3 class="search-demo__sub-heading powered-by">
+            <%= image_tag('telekom.png', alt: 'Powered by Swiftype', style: 'height:15px;width:30px;margin-top:10px') %>
+          </h3>
+        </div>
+          
+          <%= form_tag(fyp_posters_path, {method: :get, class: 'search-demo__input-wrapper'}) do %>
+            <%= text_field_tag(:search, params[:search], class: "search-demo__text-input", placeholder: "Search for Posters...") %>
+            <div class="form-check">
+              <%= link_to "Advanced Search", new_search_path ,class: "form-check-label" %>
+            </div>
+            <%= submit_tag("Search", class: "button search-demo__submit") %>
+          <% end %>
+      </div>
+
+      <%# Results %>
+      <div class="search-demo__body">
+        <% if @search.search_posters&.any? %>
+          <div class="search-results">
+
+          <div class="results">
+            <div class="results__header">
+              <div class="results__powered-by powered-by">
+                <%= image_tag('telekom.png', alt: 'Powered by Swiftype', style: 'height:15px;width:30px;margin-bottom:10px') %>
+              </div>
+            </div>
+
+            <div class="results__body">
+              <ul>
+                <% @search.search_posters.each do |fyp_poster| %>
+                <li class="result">
+                    <div class="result__header">
+                      <div class="result__title"><%= fyp_poster.p_title %></div>
+
+                    </div>
+
+                    <div class="result__body">
+                      <p class="result__description"><strong>Poster ID:</strong><%=fyp_poster.p_id %></p>
+                      <p class="result__description"><strong>Student ID:</strong><%=fyp_poster.student_id %></p>
+                      <p class="result__description"><strong>Student Name:</strong><%=fyp_poster.student_name %></p>
+                      <p class="result__description"><strong>Supervisor:</strong><%=fyp_poster.supervisor_name %></p>
+                      <p class="result__description"><strong>Moderator:</strong><%=fyp_poster.moderator_name %></p>
+                      <div class="result__details">
+                        <%= image_tag('telekom.png', alt: 'Powered by Swiftype') %>
+                      </div>
+                    </div>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+
+          <div class="results__footer">
+            <%= link_to 'Back', new_search_path %>
+          </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>

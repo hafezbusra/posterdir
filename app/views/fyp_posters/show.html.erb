@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>P:</strong>
+  <%= @fyp_poster.p_id %>
+</p>
+
+<p>
+  <strong>P title:</strong>
+  <%= @fyp_poster.p_title %>
+</p>
+
+<p>
+  <strong>Student name:</strong>
+  <%= @fyp_poster.student_name %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @fyp_poster.student_id %>
+</p>
+
+<p>
+  <strong>Supervisor name:</strong>
+  <%= @fyp_poster.supervisor_name %>
+</p>
+
+<p>
+  <strong>Moderator name:</strong>
+  <%= @fyp_poster.moderator_name %>
+</p>
+
+<%= link_to 'Edit', edit_fyp_poster_path(@fyp_poster) %> |
+<%= link_to 'Back', fyp_posters_path %>
