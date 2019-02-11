@@ -10,7 +10,6 @@
           <div class="search-demo__icon-wrap">
             <%= image_tag('icons/mmu.png', class: 'search-demo__icon', alt: 'Gem Search Icon', style: 'height:100px;width:300px;margin-bottom:20px') %>
           </div>
-          <%= link_to 'Back', new_fyp_poster_path %>
           <h1 class="search-demo__title">FYP Poster</h1>
           <h3 class="search-demo__sub-heading powered-by">
             <%= image_tag('telekom.png', alt: 'Powered by Swiftype', style: 'height:15px;width:30px;margin-top:10px') %>
@@ -53,8 +52,8 @@
                       <p class="result__description"><strong>Student Name:</strong><%=fyp_poster.student_name %></p>
                       <p class="result__description"><strong>Supervisor:</strong><%=fyp_poster.supervisor_name %></p>
                       <p class="result__description"><strong>Moderator:</strong><%=fyp_poster.moderator_name %></p>
-                      <div class="result__details">
-                        <%= image_tag('telekom.png', alt: 'Powered by Swiftype') %>
+                      <div class="result__details" style="width: 80%;margin: 0 auto;">
+                        <%= image_tag('poster/' + fyp_poster.poster_img, alt: 'Fyp Poster', width: '700px') %>
                       </div>
                     </div>
                   </li>
